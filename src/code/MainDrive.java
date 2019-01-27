@@ -25,6 +25,14 @@ public class MainDrive {
 		
 		boolean isContainZero=false; //0이 없다고 전제
 		
+		for(int i=0;i<computerQuestionArr.length;i++) {
+			if(computerQuestionArr[i]==0) {
+//				0을 발견
+				isContainZero=true;
+				break;
+			}
+		}
+		
 //		456 랜덤생성 => 4를 문제배열 0번째 칸에 저장
 		computerQuestionArr[0]=randomNumber/100;
 //		456 랜덤생성 => 5를 문제배열 1번째 칸에 저장
