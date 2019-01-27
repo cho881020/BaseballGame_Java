@@ -16,6 +16,9 @@ public class MainDrive {
 //		사용자가 입력한 3자리 숫자를 저장할 배열을 만들자.
 		int[] userInputNumArr =new int[3];
 		
+//		몇 번 정답을 입력해봤는지 기록하는 변수생성.
+		int inputCount =0;
+		
 		while(true) {
 		
 //			올바른 숫자를 입력해야만 검사하러 넘어가는 while문
@@ -55,6 +58,7 @@ public class MainDrive {
 						System.out.print(userInputNumArr[i]);
 					}		
 					System.out.println();
+					inputCount++;
 					break;
 				}	
 			}
@@ -91,6 +95,7 @@ public class MainDrive {
 			
 //			게임종료의 조건 : 3S를 맞추는 것. => break;
 			if(strikeCount==3) {
+				System.out.println(String.format("%d번의 시도끝에,", inputCount));
 				System.out.println("축하합니다! 승리했습니다!");
 				break;
 			}
