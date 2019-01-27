@@ -37,6 +37,14 @@ public class MainDrive {
 //			456 생성 => 6을 2번칸에 저장.
 			computerQuestionArr[2] = randomNumber % 10;
 			
+			boolean isContainZero = false; //0이 없다고 전제.
+			for (int i = 0; i < computerQuestionArr.length; i++) {
+				if(computerQuestionArr[i] == 0) {
+//					0을 발견!
+					isContainZero = true;
+					break;
+				}
+			}
 		}
 
 		
