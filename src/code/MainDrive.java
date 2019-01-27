@@ -21,13 +21,20 @@ public class MainDrive {
 			int randomNumber = (int)(randomVal*900+100);
 			System.out.println(randomNumber);
 
-			
-		
 
 			computerQuestionArr[0] =  randomNumber /100; //			456랜덤 생성 이라면 4를 computerQuestionArr 배열 0번칸에 저장
 			computerQuestionArr[1] =  (randomNumber /10)%10;//			456랜덤 생성 이라면 5를 computerQuestionArr 배열 1번칸에 저장
 			computerQuestionArr[2] =  randomNumber %10;//			456랜덤 생성 이라면 6를 computerQuestionArr 배열 2번칸에 저장
-
+			
+			boolean isContainZero = false; // 0이 없다고 전제
+			
+			for(int i=0; i<computerQuestionArr.length;i++) {
+				if(computerQuestionArr[i]==0) { // 0이 발견
+					isContainZero = true;
+					break;
+				}
+			}
+			
 		}
 
 		
