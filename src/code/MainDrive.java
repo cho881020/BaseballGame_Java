@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainDrive {
 
 	public static void main(String[] args) {
-	
+
 //		컴퓨터가 낸 문제를 471로 정의.
 		int[] computerQuestionArr = {4, 7, 1};
 		
@@ -21,9 +21,7 @@ public class MainDrive {
 		
 //		1. 맨 앞자리 숫자를 0번칸에 저장한다. 423 => 4을 0번칸에 저장.
 		userInputNumArr[0] = userInput / 100;
-		
-		
-		
+	
 		
 	}
 }
