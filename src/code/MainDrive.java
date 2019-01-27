@@ -6,37 +6,64 @@ public class MainDrive {
 
 	public static void main(String[] args) {
 
-//		컴퓨터가 낸 문제를 471로 정의.
-//		int[] computerQuestionArr = {4, 7, 1};
+
+//		컴퓨터가 문제를 랜덤으로 내도록.
+//		100 ~ 999의 숫자를 랜덤으로 생성.
+//		생성된 숫자가 0을 포함하거나, 중복이 있다면 다시 만들도록.
 		
-//		컴퓨터가 100 ~ 999까지 랜덤으로 문제를 냄. 중복X, 0이 포함되면 안되고, 같은 숫자반복X
 		int[] computerQuestionArr = new int[3];
 		
-		while(true) {
-//			랜덤 숫자를 던져주는 자바의 math 클래스가 가진 random() 기능 활용.
-//			0.0보다 크거나 같고 1.0보다 작은 소수를 랜덤으로 생성
-//			100 <= randomVal*900 + 100 < 1000
+		
+		while (true) {
+//			랜덤 숫자를 던져주는 자바의 Math 클래스 가 가진 random() 기능 활용.
+//			0.0 보다 크거나 같고, 1.0 보다 작은 소수를 랜덤으로 생성.
+//			0 <= randomVal < 1  
+//			randomVal에 900을 곱해보자.
+//			0 <= randomVal * 900 < 900
+//			900을 곱한 randomVal 에 100을 더해보자.
 			
-			
+//			100 <= randomVal * 900 + 100 < 1000  : 100 이상 1000 미만 : 100 ~ 999
+//			계산 결과는 여전히 실수. 강제로 int로 변환해서 정수 추출. 형변환 (Casting)
 			double randomVal = Math.random();
-			int randomNumber = (int) randomVal * 900 + 100;
-			System.out.println(randomVal);
 			
+			int randomNumber = (int) (randomVal * 900 + 100);
+			
+			System.out.println(randomNumber);
+			
+//			456 랜덤 생성 => 4를 문제배열의 0번칸에 저장.
 			computerQuestionArr[0] = randomNumber / 100;
-			computerQuestionArr[1] = randomNumber / 10;
+//			456 랜덤 생성 => 5를 1번칸에 저장.
+			computerQuestionArr[1] = randomNumber / 10 % 10;
+//			456 랜덤생성 => 6을 2번칸에 저장.
 			computerQuestionArr[2] = randomNumber % 10;
 			
-			boolean isQuestionZero = false;
+
+			boolean isQuestionContainZero = false; // 0이 없다고 전제.
 			
-			for(int i=0; i<computerQuestionArr.length; i++) {
-				if(computerQuestionArr[i] == 0) {
-					isQuestionZero = true;
+			for (int i=0 ; i < computerQuestionArr.length ; i++) {
+				
+				if ( computerQuestionArr[i] == 0) {
+//					0을 발견!
+					isQuestionContainZero = true;
 					break;
 				}
+				
 			}
 			
+//			중복된 숫자가 있는지 검사.
+			boolean hasQuestionDuplNum = (computerQuestionArr[0] == computerQuestionArr[1])
+					|| (computerQuestionArr[1] == computerQuestionArr[2])
+					|| (computerQuestionArr[0] == computerQuestionArr[2]);
+			
+			
+//			중복도 없고, 0도 없다면 문제 생성을 종료.
+			if (!isQuestionContainZero && !hasQuestionDuplNum) {
+//				문제가 올바르게 출제됨!
+				break;
+			}
+			
+			
 		}
-		
 
 		
 
@@ -47,7 +74,7 @@ public class MainDrive {
 //		사용자가 입력한 세자리 숫자를 저장할 배열. 
 		int[] userInputNumArr = new int[3];
 		
-//		정답까지 시도한 횟수를 저장할 변수
+//		몇번 정답을 입력해봤는지 기록하는 변수.
 		int inputCount = 0;
 
 		
@@ -92,7 +119,7 @@ public class MainDrive {
 				if (!isContainZero && !hasDuplNum) {
 //					입력을 제대로 했다! => 그만 입력하도록 break;
 					
-//					입력횟수도 1증가
+//					입력 횟수도 1 증가.
 					inputCount++;
 					
 					for (int i=0 ; i < userInputNumArr.length ; i++) {
@@ -151,7 +178,8 @@ public class MainDrive {
 				System.out.println("정답입니다!");
 				
 //				몇번만에 정답을 입력했는지 출력.
-				System.out.println(String.format("%d번만에 정답을 맞췄습니다.", inputCount));
+				System.out.println(String.format("%d번 만에 맞췄습니다!", inputCount));
+				
 				break;
 			}
 			
@@ -162,6 +190,7 @@ public class MainDrive {
 		
 	}
 }
+
 
 
 
