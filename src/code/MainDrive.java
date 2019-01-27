@@ -24,7 +24,7 @@ public class MainDrive {
 //		계산 결과는 여전히 실수. 강제로 int로 변환해서 정수 추출. 형변환(Casting)
 		double randomVal = Math.random();
 		int randomNumber = (int)(randomVal*900 + 100);
-		System.out.println(randomNumber);
+//		System.out.println(randomNumber);
 		
 		
 
