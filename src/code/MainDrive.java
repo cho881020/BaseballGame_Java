@@ -15,6 +15,11 @@ public class MainDrive {
 //		사용자가 입력한 세자리 숫자를 저장할 배열.
 		int[] userInputNumArr = new int[3];
 		
+//		몇번 정답을 입력해봤는지 기록하는 변수.
+		int inputCount = 0;
+		
+		
+		
 //		3S가 될떄까지 계속 입력하도록.
 		while (true) {
 			
@@ -56,6 +61,9 @@ public class MainDrive {
 //				0도 없고, 동시에 중복도 없다면?
 				if (!isContainZero && !hasDup1Num) {
 //					입력을 제대로 했다! => 그만 입력하도록 break;
+					
+//					입력횟수도 1 증가.
+					inputCount++;
 					
 					for (int i=0 ; i < userInputNumArr.length ; i++) {
 						System.out.println(userInputNumArr[i]);
@@ -111,6 +119,10 @@ public class MainDrive {
 			
 			if (strikeCount == 3) {
 				System.out.println("정답입니다!");
+				
+//				몇번만에 정답을 입력했는지 출력.
+				System.out.println(String.format("%d번 만에 맞췄습니다!", inputCount));
+				
 				break;
 			}
 			
