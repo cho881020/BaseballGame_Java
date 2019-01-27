@@ -36,6 +36,16 @@ public class MainDrive {
 		computerQuestionArr[2] = randomNumber % 10;
 		
 		
+		boolean isContainZero = false; // 0이 없다고 전제
+		
+		for(int i = 0 ; i< computerQuestionArr.length ; i++) {
+			if(computerQuestionArr[i] == 0) {
+//				0을 발견
+				isContainZero = true;
+				break;
+			}
+		}
+		
 		}
 
 //		사용자에게 3자리 숫자를 입력받자
