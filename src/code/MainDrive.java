@@ -50,6 +50,12 @@ public class MainDrive {
 			boolean hasQuestionDuplNum = (computerQuestionArr[0] == computerQuestionArr[1])
 					|| (computerQuestionArr[1] == computerQuestionArr[2])
 					|| (computerQuestionArr[0] == computerQuestionArr[2]);
+			
+//			중복도 없고, 0도 없다면 문제 생성을 종료함.
+			if(!isQuestionContainZero && !hasQuestionDuplNum) {
+//				문제가 올바르게 출제됨.
+				break;
+			}
 		}
 
 		
