@@ -19,6 +19,9 @@ public class MainDrive {
 
 		
 		while (true) {
+			
+			while(true) {
+				
 			System.out.print("3자리 숫자를 입력하세요 : ");
 			int userInput = scan.nextInt();
 			
@@ -105,7 +108,13 @@ public class MainDrive {
 		
 		System.out.println(String.format("%d S, %d B 입니다.", strikeCount, ballCount));
 		
-		
+//		게임종료의 조건? 3S를 맞췄다면 ! break;
+		if(strikeCount == 3) {
+			System.out.println("정답입니다!");
+			break;
+		}
+		}
+	
 	}
 }
 
