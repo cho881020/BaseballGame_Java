@@ -31,8 +31,7 @@ public class MainDrive {
 			
 			System.out.println(randomNumber);
 			
-			
-			
+						
 //			456 랜덤 생성 => 4를 문제배열의 0번칸에 저장.
 			computerQuestionArr[0] = randomNumber / 100;
 //			456 랜덤 생성 => 5를 1번칸에 저장.
@@ -40,7 +39,17 @@ public class MainDrive {
 //			456 랜덤생성 => 6을 2번칸에 저장.
 			computerQuestionArr[2] = randomNumber % 10;
 			
+			boolean isContainZero = false; // 0이 없다고 전제.
 			
+			for (int i=0 ; i < computerQuestionArr.length ; i++) {
+				
+				if (computerQuestionArr[i] == 0) {
+//					0을 발견!
+					isContainZero = true;
+					break;
+				}
+				
+			}
 			
 		}
 
