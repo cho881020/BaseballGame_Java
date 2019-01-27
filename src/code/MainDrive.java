@@ -19,7 +19,7 @@ public class MainDrive {
 			
 			int randomNumber = (int) (randomVal*900+100);
 			
-			System.out.println(randomNumber);
+//			System.out.println(randomNumber);
 			
 			
 //			456 랜덤 생성 => 4를 문제배열에 0번칸에 에 저장
