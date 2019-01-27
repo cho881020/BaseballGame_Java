@@ -54,11 +54,13 @@ public class MainDrive {
 			}
 			for (int i=0 ; i < userInputNumArr.length ; i++) {
 				System.out.println(userInputNumArr[i]);
+				
+				break;
 			}			
-			break;
+			
 		}
 		
-		
+
 		
 		
 	}
