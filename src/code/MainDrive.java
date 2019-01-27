@@ -7,7 +7,28 @@ public class MainDrive {
 	public static void main(String[] args) {
 
 //		컴퓨터가 낸 문제를 471로 정의.
-		int[] computerQuestionArr = {4, 7, 1};
+//		int[] computerQuestionArr = {4, 7, 1};
+		
+//		컴퓨터가 100 ~ 999까지 랜덤으로 문제를 냄. 중복X, 0이 포함되면 안되고, 같은 숫자반복X
+		int[] computerQuestionArr = new int[3];
+		
+		while(true) {
+//			랜덤 숫자를 던져주는 자바의 math 클래스가 가진 random() 기능 활용.
+//			0.0보다 크거나 같고 1.0보다 작은 소수를 랜덤으로 생성
+//			100 <= randomVal*900 + 100 < 1000
+			
+			
+			double randomVal = Math.random();
+			int randomNumber = (int) randomVal * 900 + 100;
+			System.out.println(randomVal);
+			
+			computerQuestionArr[0] = randomNumber / 100;
+			computerQuestionArr[1] = randomNumber / 10;
+			computerQuestionArr[2] = randomNumber % 10;
+			
+		}
+		
+
 		
 
 //		사용자에게 3자리 숫자를 입력받자.
