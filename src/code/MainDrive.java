@@ -29,15 +29,23 @@ public class MainDrive {
 //			456 랜덤생성 => 6을 2번칸에 저장
 			computerQuestionArr[2] = randomNumber & 10; 
 			
-			boolean isContainZero = false; // 0 이 없다고 전제
+			boolean isQuestionContainZero = false; // 0 이 없다고 전제
 			
 			for (int i = 0; i < computerQuestionArr.length; i++) {
 				if(computerQuestionArr[i] == 0) {
 //					0을 발견 !
-					isContainZero = true;
+					isQuestionContainZero = true;
 				}
 			}
+		boolean hasQuestionDuplNum = computerQuestionArr[0] == computerQuestionArr[1]  
+				|| (computerQuestionArr[1]) == computerQuestionArr[2]
+						|| (computerQuestionArr[0] == computerQuestionArr[1]);
+		
+						
+		
 		}
+		
+		
 //		랜덤숫자를 던져주는 자바의 math클래스가 가진 random() 기능 활용
 //		0.0 보다 크거나 같고, 1.0 보다 작은 소수를 랜덤으로 생성.
 //		0 <= randomVal < 1 
