@@ -36,15 +36,20 @@ public class MainDrive {
 		computerQuestionArr[2] = randomNumber % 10;
 		
 		
-		boolean isContainZero = false; // 0이 없다고 전제
+		boolean isQuestionContainZero = false; // 0이 없다고 전제
 		
 		for(int i = 0 ; i< computerQuestionArr.length ; i++) {
 			if(computerQuestionArr[i] == 0) {
 //				0을 발견
-				isContainZero = true;
+				isQuestionContainZero = true;
 				break;
 			}
 		}
+		
+//		중복된 숫자가 있는지 검사
+		boolean hasQuestionDuplNum = (computerQuestionArr[0] ==computerQuestionArr[1]
+				||computerQuestionArr[1] ==computerQuestionArr[2]
+				|| computerQuestionArr[0] ==computerQuestionArr[2]);
 		
 		}
 
