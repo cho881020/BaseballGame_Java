@@ -1,5 +1,6 @@
 package code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
@@ -10,8 +11,40 @@ public class MainDrive {
 
 	public static void main(String[] args) {
 
-//		컴퓨터가 낸 문제를 471로 정의
-		int[] computerQuestionArr = { 4, 7, 1 };
+//		컴퓨터가 낸 문제를 471로 정의 (이거만 하면 재미가 없겠지
+//		int[] computerQuestionArr = { 4, 7, 1 };
+		
+
+//		컴퓨터가 문제를 램덤으로 내도록.
+//		100~999의 숫자를 랜덤으로 생성.
+//		생성된 숫자가 0을 포함하거나, 중복이 있다면 다시 만들도록
+		int[] computerQuestionArr = new int[3];
+		
+		while (true) {
+//			랜덤 숫자를 던져주는 자바의 Math 클래스가 가진 random() 기능 활용.
+//			0.0 보다 크거나 같고, 1.0 보다 작은 소수를 랜덤으로 생성.
+//			0 <= randomVa1(=랜덤값) < 1
+//			randomVa1에 900을 곱해보자.
+//			0 <= randomVa1 * 900 < 900
+//			900을 곱한 randomVa1에 100을 더해보자.		
+			
+//			100 <= randomVa1 * 900 + 100 < 1000 : 100 이상, 1000 미만 : 100~900
+//			계산 결과는 여전히 실수. 강제로 int로 변환해서 정수 추출 = 형변환 (Casting)
+			
+			double randomVa1 = Math.random();
+			
+			int randomNumber = (int) (randomVa1 * 900 + 100) ;
+			
+			System.out.println(randomNumber);
+			
+//			456 랜덤 생성 => 4를 문제 배열의 0번칸에 저장
+			computerQuestionArr[0] = randomNumber / 100;
+//			456 랜덤 생성 => 5를 1번칸에 저장
+			computerQuestionArr[1] = randomNumber / 10 % 10;
+//			456 랜덤 생성 => 6를 2번칸에 저장
+			computerQuestionArr[2] = randomNumber % 10;
+			
+		}
 
 //		사용자에게 3자리 숫자를 입력받자.
 		Scanner scan = new Scanner(System.in);
@@ -55,7 +88,8 @@ public class MainDrive {
 //				중복인지 허가하지 않을 것. 중복인지? 검사 결과 저장.
 //				112, 122, 121 -> 허가 안함
 				boolean hasDuplNum = userInputNumArr[0] == userInputNumArr[1]
-						|| (userInputNumArr[1] == userInputNumArr[2]) || (userInputNumArr[0] == userInputNumArr[2]);
+						|| (userInputNumArr[1] == userInputNumArr[2]) 
+						|| (userInputNumArr[0] == userInputNumArr[2]);
 
 //				0도 없고, 동시에 중복도 없다면?
 				if (!isContainZero && !hasDuplNum) {
