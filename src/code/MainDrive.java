@@ -37,11 +37,15 @@ public class MainDrive {
 					isQuestionContainZero = true;
 				}
 			}
+//			중복된 숫자가 있는지 검사
 		boolean hasQuestionDuplNum = computerQuestionArr[0] == computerQuestionArr[1]  
 				|| (computerQuestionArr[1]) == computerQuestionArr[2]
 						|| (computerQuestionArr[0] == computerQuestionArr[1]);
 		
-						
+		if (!isQuestionContainZero && ! hasQuestionDuplNum) {
+//			문제가 올바르게 출제됨
+			break;
+		}
 		
 		}
 		
