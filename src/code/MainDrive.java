@@ -7,16 +7,46 @@ public class MainDrive {
 	public static void main(String[] args) {
 
 //		컴퓨터가 낸 문제를 471로 정의.
-		int[] computerQuestionArr = {4, 7, 1};
-		
-
+		int[] computerQuestionArr = {4, 7, 1}; 
+//      ================================================		
+//		컴퓨터가 맨덤입력 100 ~ 999 , 0
+//		0 <= 
+//		int[] computerQuestionArr = new in[3];
+//		
+////		랜덤 숫자  
+//		double randomVal = math.random();
+//		int randomnunber = (int) (randomVal * 900 + 100)
+//		System.out.println(randomnunber);
+//		
+//		boolean isContainZero = false; // 0이 없다고 전제
+//		
+//		computerQuestionArr[0] = randomnunber / 100;
+//		computerQuestionArr[1] = randomnunber / 10 % 10;
+//		computerQuestionArr[2] = randomnunber % 10;
+//		
+//		boolean isContainZero = false;
+//		
+//		for (int i=0 ; i <computerQuestionArr.length ; i++) {
+//			
+//			if (computerQuestionArr[i] == 0) {
+//				isContainZero = true;
+//				break;
+//			}
+//		}
+//		boolean hasDuplNum = (computerQuestionArr[0] == computerQuestionArr[1])
+//				||
+//		
+//         ==========================================================================
 //		사용자에게 3자리 숫자를 입력받자.
 		Scanner scan = new Scanner(System.in);
 		
 //		사용자가 123 입력 => {1,2,3} 배열로 저장.
 //		사용자가 입력한 세자리 숫자를 저장할 배열. 
 		int[] userInputNumArr = new int[3];
-
+		
+//		입력횟수
+		int inputcnt = 0;
+		
 		
 //		3S가 될때까지 계속 입력하도록.
 		while (true) {
@@ -58,7 +88,8 @@ public class MainDrive {
 //				0도 없고, 동시에 중복도 없다면?
 				if (!isContainZero && !hasDuplNum) {
 //					입력을 제대로 했다! => 그만 입력하도록 break;
-					
+//					
+					inputcnt++; 
 					for (int i=0 ; i < userInputNumArr.length ; i++) {
 						System.out.println(userInputNumArr[i]);
 					}
@@ -113,6 +144,8 @@ public class MainDrive {
 			
 			if (strikeCount == 3) {
 				System.out.println("정답입니다!");
+				
+				System.out.println(String.format("%d 회다", inputcnt));
 				break;
 			}
 			
