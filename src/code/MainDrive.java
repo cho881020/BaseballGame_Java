@@ -42,6 +42,15 @@ public class MainDrive {
 			computerQuestionArr[2] = randomNumber % 10 ;
 			
 			
+			boolean isContainZero = false;
+			
+			for(int i = 0 ; i < computerQuestionArr.length ; i++) {
+				
+				if (computerQuestionArr[i] == 0) {
+					isContainZero = true;
+					break;
+				}
+			}
 			
 			break;
 		}
