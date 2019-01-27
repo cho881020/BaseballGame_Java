@@ -6,8 +6,32 @@ public class MainDrive {
 
 	public static void main(String[] args) {
 		
-//		컴퓨터가 낸 문제를 471로 정의
-		int[] computerQuestionArr = {4,7,1};
+//		컴퓨터가 문제를 랜덤으로 내도록 해보자.
+//		100~999의 숫자를 랜덤으로 생성.
+//		생성된 숫자가 0을 포함하거나 중복이있다면 다시 만들도록.
+		int[] computerQuestionArr = new int[3];
+		
+//		랜덤 숫자를 던져주는 자바의 Math클래스가 가진 random() 기능 활용.
+//		0.0보다 크거나 같고, 1.0보다 작은 소수를 랜덤으로 생성.
+//		0<=랜덤값<1 =
+//		=> randomVal에 900을 곱해보자.
+//		0 <= 랜덤값*900 < 900
+//		=> randomVal*900에 100을 더해보자
+//		100<=랜덤값*900+100<1000
+//		계산결과는 여전히 실수이므로 형변환하여 정수추출 (Casting)
+		double randomVal = Math.random();
+		int randomNumber = (int)(randomVal*900+100);
+		System.out.println(randomNumber);
+		
+		boolean isContainZero=false; //0이 없다고 전제
+		
+//		456 랜덤생성 => 4를 문제배열 0번째 칸에 저장
+		computerQuestionArr[0]=randomNumber/100;
+//		456 랜덤생성 => 5를 문제배열 1번째 칸에 저장
+		computerQuestionArr[1]=randomNumber/10%10;
+//		456 랜덤생성 => 6을 문제배열 2번째 칸에 저장
+		computerQuestionArr[2]=randomNumber%10;
+		
 		
 //		사용자에게 3자리 숫자를 입력받자.
 		Scanner scan = new Scanner(System.in);	
