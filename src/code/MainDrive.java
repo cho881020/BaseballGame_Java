@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
+import jdk.nashorn.internal.ir.BreakableNode;
+
 public class MainDrive {
 
 	public static void main(String[] args) {
@@ -40,14 +42,20 @@ public class MainDrive {
 					isContainZero = true;
 				}
 			}
-			
-					
-					
-					
-			
+
+//			중복인지 허가하지 않을 것. 중복인지? 검사 결과 저장.
+//			112, 122, 121 -> 허가 안함
+			boolean hasDuplNum = userInputNumArr[0] == userInputNumArr[1] || (userInputNumArr[1] == userInputNumArr[2]) || (userInputNumArr[0] == userInputNumArr[2]);
+
+//			0도 없고, 동시에 중복도 없다면?
+			if (!isContainZero && !hasDuplNum) {
+//				입력을 제대로 했다! => 그만 입력하도록 Break;
+	
+			}
 			for (int i=0 ; i < userInputNumArr.length ; i++) {
 				System.out.println(userInputNumArr[i]);
 			}			
+			break;
 		}
 		
 		
