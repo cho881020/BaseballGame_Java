@@ -23,8 +23,14 @@ public class MainDrive {
 		
 		userInputNumArr[0]=userInput/100;
 		
+//		2. 가운데 숫자를 1번 칸에 저장. 456 ->5를 1번칸에
+		userInputNumArr[1] = (userInput/10)%10;
+//		3. 마지막 숫자를 2번 칸에 저장. 456-> 6을 2번 칸에
+		userInputNumArr[2] = userInput %10;
 		
-		
+		for(int i=0; i<userInputNumArr.length;i++) {
+			System.out.println(userInputNumArr[i]);
+		}
 		
 	}
 }
