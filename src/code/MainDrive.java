@@ -21,6 +21,16 @@ public class MainDrive {
 //		1. 맨 앞자리 숫자를 0번칸에 저장하자.
 		userInputNumArr[0]=userInput/100;
 		
+//		2. 가운데 숫자를 1번칸에 저장하자.
+		userInputNumArr[1]=userInput/10%10;
+		
+		
+//		3. 마지막 숫자를 2번칸에 저장하자.
+		userInputNumArr[2]=userInput%10;
+		
+		for(int i=0;i<3;i++) {
+			System.out.print(userInputNumArr[i]);
+		}
 		
 	}
 }
