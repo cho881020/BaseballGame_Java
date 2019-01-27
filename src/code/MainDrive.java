@@ -36,14 +36,23 @@ public class MainDrive {
 					isContainZero = true;
 				}
 			}
-	
+			
+//			중복 허가x , 중복인지 체크하는 변수 (112,122,121 불가능)
+			boolean hasDuplNum =(userInputNumArr[0] == userInputNumArr[1])
+										||(userInputNumArr[1] == userInputNumArr[2])
+										||(userInputNumArr[0] == userInputNumArr[2]);
+			
+//			0도 없고, 동시에 중복도 없다면, -> 입력을 제대로 했다 -> 그만 입력하게
+			if ( !isContainZero && !hasDuplNum ) {
+			
+			
 			for(int i=0; i<userInputNumArr.length;i++) {
 				System.out.println(userInputNumArr[i]);
 			}
-			
+			break;
+			}
+		
+	
 		}
-		
-		
-		
 	}
 }
