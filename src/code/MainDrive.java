@@ -35,7 +35,7 @@ public class MainDrive {
 			
 			int randomNumber = (int) (randomVa1 * 900 + 100) ;
 			
-			System.out.println(randomNumber);
+//			System.out.println(randomNumber); // 주석처리 하면 안보이는거지!!
 			
 //			456 랜덤 생성 => 4를 문제 배열의 0번칸에 저장
 			computerQuestionArr[0] = randomNumber / 100;
