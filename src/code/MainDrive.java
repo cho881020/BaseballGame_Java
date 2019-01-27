@@ -26,15 +26,18 @@ public class MainDrive {
 			computerQuestionArr[1] =  (randomNumber /10)%10;//			456랜덤 생성 이라면 5를 computerQuestionArr 배열 1번칸에 저장
 			computerQuestionArr[2] =  randomNumber %10;//			456랜덤 생성 이라면 6를 computerQuestionArr 배열 2번칸에 저장
 			
-			boolean isContainZero = false; // 0이 없다고 전제
+			boolean isQuestionContainZero = false; // 0이 없다고 전제
 			
 			for(int i=0; i<computerQuestionArr.length;i++) {
 				if(computerQuestionArr[i]==0) { // 0이 발견
-					isContainZero = true;
+					isQuestionContainZero = true;
 					break;
 				}
 			}
 			
+			boolean hasQuestionDuplNum = (computerQuestionArr[0] ==computerQuestionArr[1])
+													||(computerQuestionArr[1] ==computerQuestionArr[2])
+													||(computerQuestionArr[0] ==computerQuestionArr[2]);
 		}
 
 		
