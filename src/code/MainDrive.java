@@ -41,16 +41,26 @@ public class MainDrive {
 //			랜덤 456 생성 => 6를 2번칸에 저장.
 			computerQuestionArr[2] = randomNumber % 10 ;
 			
-			
-			boolean isContainZero = false;
+//			0포함 여부 검사 => 0 포함시 true
+			boolean isQuestionContainZero = false;
 			
 			for(int i = 0 ; i < computerQuestionArr.length ; i++) {
 				
 				if (computerQuestionArr[i] == 0) {
-					isContainZero = true;
+					isQuestionContainZero = true;
 					break;
 				}
 			}
+			
+			
+//			중복된 숫자 검사 => 중복시 true
+			
+			boolean hasQuestionDuplNum = computerQuestionArr[0] == computerQuestionArr[1] 
+					|| computerQuestionArr[0] == computerQuestionArr[2] 
+					|| computerQuestionArr[1] == computerQuestionArr[2] ;
+					
+			
+			
 			
 			break;
 		}
