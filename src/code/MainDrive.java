@@ -10,17 +10,17 @@ public class MainDrive {
 		int[] computerQuestionArr = {4,7,1};
 		
 //		사용자에게 3자리 숫자를 입력받자.
-		Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);	
+
+//		사용자가 1,2,3을 입력했다면 {1,2,3} 배열로 저장.	
+//		사용자가 입력한 3자리 숫자를 저장할 배열을 만들자.
+		int[] userInputNumArr =new int[3];
 		
 		while(true) {		
 			
 			System.out.print("세자리 숫자를 입력하세요.");
 			int userInput = scan.nextInt();
-			
-//			사용자가 1,2,3을 입력했다면 {1,2,3} 배열로 저장.	
-//			사용자가 입력한 3자리 숫자를 저장할 배열을 만들자.
-			int[] userInputNumArr =new int[3];
-			
+						
 //			1. 맨 앞자리 숫자를 0번칸에 저장하자.
 			userInputNumArr[0]=userInput/100;
 			
@@ -51,9 +51,39 @@ public class MainDrive {
 				for(int i=0;i<3;i++) {
 					System.out.print(userInputNumArr[i]);
 				}		
+				System.out.println();
 				break;
 			}	
 		}
+		
+//		입력을 제대로 받았으니 ?S ?B인지 검사하자.
+		
+//		S,B갯수를 기록할 변수를 생성하자.
+		int strikeCount = 0;
+		int ballCount = 0;
+		
+//		반복요소
+//		1) 사용자가 입력한 숫자를 택하는 반복 : i
+//		2) 숫자를 가지고 문제와 비교하여 S/B 판단 : j
+		
+		for(int i=0; i<userInputNumArr.length;i++) {
+			for(int j=0;j<computerQuestionArr.length;j++) {
+//				사용자가 입력한 값 중 i번째 숫자와
+//				컴퓨터가 낸 문제의 값 중 j번째 숫자가 같은지?
+				if(userInputNumArr[i]==computerQuestionArr[j]) {
+//					숫자가 같다는 것을 발견 => S인지 B인지?
+					if(i==j) {
+//						두 배열의 index가 같다. => 숫자가 위치도 같다. =>S갯수 증가.
+						strikeCount++;
+					}else {
+//						숫자는 같은데, 위치가 다르다. => B갯수 증가.
+						ballCount++;
+					}
+				}
+			}
+		}
+		
+		System.out.println(String.format("%d S, %d B입니다.", strikeCount,ballCount));
 		
 	}
 }
