@@ -30,7 +30,7 @@ public class MainDrive {
 
 			double randomVal = Math.random();  
 			int randomNumber = (int) ( randomVal*900 +100);
-			System.out.println(randomNumber);
+//			System.out.println(randomNumber);
 			
 //			랜덤 456 생성 => 4를 문제배열 0번칸에 저장.
 			computerQuestionArr[0] = randomNumber/100;
