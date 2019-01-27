@@ -38,6 +38,12 @@ public class MainDrive {
 			boolean hasQuestionDuplNum = (computerQuestionArr[0] ==computerQuestionArr[1])
 													||(computerQuestionArr[1] ==computerQuestionArr[2])
 													||(computerQuestionArr[0] ==computerQuestionArr[2]);
+			
+			//중복도 ,0도 없다면 문제 그만 생성
+			if(!isQuestionContainZero && !hasQuestionDuplNum) { //문제가 올바르게 출제 되었다.
+				break;
+			}
+			
 		}
 
 		
