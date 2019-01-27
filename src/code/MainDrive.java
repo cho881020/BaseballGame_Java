@@ -19,9 +19,13 @@ public class MainDrive {
 //		=> randomVal*900에 100을 더해보자
 //		100<=랜덤값*900+100<1000
 //		계산결과는 여전히 실수이므로 형변환하여 정수추출 (Casting)
-		double randomVal = Math.random();
-		int randomNumber = (int)(randomVal*900+100);
-		System.out.println(randomNumber);
+		
+		while(true) {
+
+			double randomVal = Math.random();
+			int randomNumber = (int)(randomVal*900+100);
+			
+			System.out.println(randomNumber);
 		
 		boolean isQuestionContainZero=false; //0이 없다고 전제
 		
@@ -38,7 +42,11 @@ public class MainDrive {
 												  ||(computerQuestionArr[1]==computerQuestionArr[2])
 		   										  ||(computerQuestionArr[0]==computerQuestionArr[2]);
 		
-		
+//		중복도 없고, 0도 없다면 문제생성중단.
+		if(!isQuestionContainZero && !hasQuestionDuplNum) {
+//			문제가 올바르게 출제됨!
+			break;
+		}
 		
 		
 		
@@ -49,6 +57,7 @@ public class MainDrive {
 //		456 랜덤생성 => 6을 문제배열 2번째 칸에 저장
 		computerQuestionArr[2]=randomNumber%10;
 		
+		}
 		
 //		사용자에게 3자리 숫자를 입력받자.
 		Scanner scan = new Scanner(System.in);	
