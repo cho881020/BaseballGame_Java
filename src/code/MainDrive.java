@@ -15,6 +15,10 @@ public class MainDrive {
 //		사용자가 123 입력 => {1,2,3} 배열로 저장
 //		사용자가 입력한 세자리 숫자 저장할 배열
 		int[] userInputNumArr = new int[3];
+		
+//		몇 번 정답을 입력했는지 기록하는 변수 
+		int inputCount = 0;
+		
 
 //		3S가 될때까지 계속 입력하도록.
 		while (true) {
@@ -44,9 +48,11 @@ public class MainDrive {
 				boolean hasDuplNum = (userInputNumArr[0] == userInputNumArr[1])
 						|| (userInputNumArr[1] == userInputNumArr[2]) || (userInputNumArr[0] == userInputNumArr[2]);
 
-//				0도 없고, 동시에 중복도 없다면, -> 입력을 제대로 했다 -> 그만 입력하게
+//				0도 없고, 동시에 중복도 없다면, -> 입력을 제대로 했다 -> 그만 입력하게 break;
 				if (!isContainZero && !hasDuplNum) {
-
+//				제대로 입력한 부분, 입력 횟수도 1 증가!
+					inputCount++;
+					
 					for (int i = 0; i < userInputNumArr.length; i++) {
 						System.out.println(userInputNumArr[i]);
 					}
@@ -78,10 +84,14 @@ public class MainDrive {
 			}
 
 			System.out.println(String.format("%d S, %d B 입니다.", strikeCount, ballCount));
+			
 //			게임 종료의 조건? 3S를 맞췄다면! break;
 
 			if (strikeCount == 3) {
 				System.out.println("정답입니다!");
+
+//				몇번만에 정답 입력했나 출력
+				System.out.println(String.format("%d번 만에 맞췄습니다!", inputCount));
 				break;
 			}
 		}
